@@ -1,4 +1,11 @@
 *, *::before, *::after {
     /* box sizing is not a property that can be inherited from its parent so must be mentioned explicitly */
     box-sizing: border-box;
+    /* font-family:  */
+    /* font-weight: normal; */
+}
+
+body {
+    padding: 0;
+    margin: 0;
 }
