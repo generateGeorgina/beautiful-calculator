@@ -10,3 +10,9 @@ body {
     margin: 0;
     /* background: */
 }
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
