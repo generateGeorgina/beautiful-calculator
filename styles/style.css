@@ -20,6 +20,6 @@ body {
     min-height: 100vh;
     /* 4 columns of 100px width */
     grid-template-columns: repeat(4, 100px);
-    /* auto to catch overflow of digits 120px minimum and auto maximum*/
+    /* auto to catch overflow of digits 120px minimum and auto maximum */
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
