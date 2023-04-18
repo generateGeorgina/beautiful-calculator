@@ -23,3 +23,8 @@ body {
     /* auto to catch overflow of digits 120px minimum and auto maximum*/
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
+
+/* select all buttons in calculator-grid class */
+.calculator-grid > button {
+    cursor: pointer;
+}
