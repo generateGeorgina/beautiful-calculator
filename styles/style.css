@@ -27,4 +27,5 @@ body {
 /* select all buttons in calculator-grid class */
 .calculator-grid > button {
     cursor: pointer;
+    font-size: 2rem;
 }
