@@ -27,5 +27,6 @@ body {
 /* select all buttons in calculator-grid class */
 .calculator-grid > button {
     cursor: pointer;
+    /* rem is a CSS unti relative to the html element - em is relative to the parent element */
     font-size: 2rem;
 }
