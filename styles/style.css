@@ -29,4 +29,7 @@ body {
     cursor: pointer;
     /* rem is a CSS unti relative to the html element - em is relative to the parent element */
     font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(240, 240, 240, 0.595);
 }
