@@ -33,3 +33,9 @@ body {
     outline: none;
     background-color: rgba(240, 240, 240, 0.595);
 }
+
+/* pseudo class */
+.calculator-grid > button:hover {
+    background-color: rgba(240, 240, 240, 0.823);
+
+}
