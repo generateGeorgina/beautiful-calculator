@@ -15,7 +15,8 @@ body {
     display: grid;
     /* center calculator within grid */
     justify-content: center;
-    align-items: center;
+    /* position entire content in center (not just align-items) */
+    align-content: center;
     /* fill 100% of the veiwport height */
     min-height: 100vh;
     /* 4 columns of 100px width */
@@ -36,6 +37,6 @@ body {
 
 /* pseudo class */
 .calculator-grid > button:hover {
-    background-color: rgba(240, 240, 240, 0.823);
+    background-color: rgb(255, 20, 188);
 
 }
