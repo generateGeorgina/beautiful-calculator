@@ -28,7 +28,7 @@ body {
 /* select all buttons in calculator-grid class */
 .calculator-grid > button {
     cursor: pointer;
-    /* rem is a CSS unti relative to the html element - em is relative to the parent element */
+    /* rem is a CSS unit relative to the html element - em is relative to the parent element */
     font-size: 2rem;
     border: 1px solid white;
     outline: none;
@@ -39,4 +39,32 @@ body {
 .calculator-grid > button:hover {
     background-color: rgb(255, 20, 188);
 
+}
+
+.two-times-span {
+    grid-column: span 2;
+}
+
+.output {
+    /* span from column 1 to last column */
+    grid-column: 1 / -1;
+    background-color: rgba(240, 240, 240, 0.595);
+    display: flex;
+    /* flex-end to position items to the right */
+    align-items: flex-end;
+    /* create space between previous and current operand and edges */
+    justify-content: space-around;
+    /* to change from horizontal to vertical */
+    flex-direction: column;
+    padding: 10px;
+    /* word wrap in middle of 'word' */
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* inside output element */
+.output .previous-operand{
+    color:rgb(255, 20, 188);
+    /* rem is a CSS unit relative to the html element - em is relative to the parent element */
+    font-size: 1.5rem;
 }
