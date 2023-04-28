@@ -64,7 +64,13 @@ body {
 
 /* inside output element */
 .output .previous-operand{
-    color:rgb(255, 20, 188);
+    color:rgba(255, 20, 188, 0.307);
     /* rem is a CSS unit relative to the html element - em is relative to the parent element*/
     font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color:rgb(255, 20, 188);
+    /* rem is a CSS unit relative to the html element - em is relative to the parent element*/
+    font-size: 2.5rem;
 }
