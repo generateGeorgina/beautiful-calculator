@@ -19,7 +19,10 @@ class Calculator {
     }
 
     appendNumber(number) {
-        this.currentOperand = number
+        // only one decimal point is allowed
+        if (number === '.' && this.currentOperand.includes('.')) return
+        // convert number to string so 1 + 1 is '11' and not 2
+        this.currentOperand = this.currentOperand.toString() + number.toString()
     }
 
     chooseOperation(operation) {
