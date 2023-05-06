@@ -15,7 +15,9 @@ class Calculator {
     }
 
     delete() {
-
+        // delete last value
+        // value in currentOperand turn into a array of string and only copy all numbers but the last number and update currentOperand
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
     appendNumber(number) {
@@ -41,7 +43,33 @@ class Calculator {
     }
 
     compute() {
-
+        let computation
+        // converts the previousOperand string into a number - which is assigned to prev
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        // if prev or current is not a number (or is empty), exit function
+        if (isNaN(prev) || isNaN(current)) return
+        switch (this.operation) {
+            case '+': 
+                computation = prev + current
+                break
+            case '-': 
+                computation = prev - current
+                break
+                // U+00d7 - not "x" which is U+0078
+            case '×':
+                computation = prev * current
+                break
+            case '÷': 
+                computation = prev / current
+                break
+            default:
+                // for invalid operations
+                return
+        }
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''
     }
 
     updateDisplay() {
@@ -82,4 +110,19 @@ operationButtons.forEach(button => {
         // update display method from constructor to refresh the display
         calculator.updateDisplay()
     })
+})
+
+equalsButton.addEventListener('click', button => {
+    calculator.compute()
+    calculator.updateDisplay()
+})
+
+allClearButton.addEventListener('click', button => {
+    calculator.clear()
+    calculator.updateDisplay()
+})
+// experimented using no parameters (button) - still works
+deleteButton.addEventListener('click', () => {
+    calculator.delete()
+    calculator.updateDisplay()
 })
