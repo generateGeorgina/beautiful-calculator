@@ -73,11 +73,26 @@ class Calculator {
     }
 
     getDisplayNumber(number) {
-        const floatNumber = parseFloat(number)
-        // to handle bugs - if floatNumber is a type other than number, return empty string for example a decimal point
-        if (isNaN(floatNumber)) return ''
-        // converts value to local string representation (large number with commas every 1,000s)
-        return floatNumber.toLocaleString('en')
+        const stringNumber = number.toString()
+        // get the first element of the array - integer before decimal point
+        const integerDigits = parseFloat(stringNumber.split('.')[0])
+        // get second element of the array which is the decimal portion of the value
+        const decimalDigits = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(integerDigits)) {
+            integerDisplay = ''
+        } else {
+            // no digits after the decimal point
+            integerDisplay = integerDigits.toLocaleString('en', {
+                maximumFractionDigits: 0
+            })
+        }
+        // if the user entered digits after the decimal point
+        if (decimalDigits != null ) {
+            return `${integerDisplay}.${decimalDigits}`
+        } else {
+            return integerDisplay
+        }
     }
 
     updateDisplay() {
@@ -86,6 +101,9 @@ class Calculator {
         if (this.operation != null) {
            this.previousOperandTextElement.innerText =
             `${this.getDisplayNumber(this.previousOperand)} ${this.operation}` 
+        } else {
+            // clears previous when equals sign is clicked
+            this.previousOperandTextElement.innerText = ''
         }
         
 
