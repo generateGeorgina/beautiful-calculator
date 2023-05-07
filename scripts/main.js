@@ -72,9 +72,23 @@ class Calculator {
         this.previousOperand = ''
     }
 
+    getDisplayNumber(number) {
+        const floatNumber = parseFloat(number)
+        // to handle bugs - if floatNumber is a type other than number, return empty string for example a decimal point
+        if (isNaN(floatNumber)) return ''
+        // converts value to local string representation (large number with commas every 1,000s)
+        return floatNumber.toLocaleString('en')
+    }
+
     updateDisplay() {
-        this.currentOperandTextElement.innerText = this.currentOperand
-        this.previousOperandTextElement.innerText = this.previousOperand
+        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
+        // if there is an operation, update previous operand with operand and operation
+        if (this.operation != null) {
+           this.previousOperandTextElement.innerText =
+            `${this.getDisplayNumber(this.previousOperand)} ${this.operation}` 
+        }
+        
+
     }
 }
 
